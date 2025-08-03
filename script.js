@@ -1,9 +1,23 @@
-document.getElementById("surpriseBtn").addEventListener("click", function() {
+let musicPlayed = false; // flag agar lagu hanya diputar sekali
+let audio = new Audio('lagu-romantis.mp3'); // siapkan audio sekali di awal
+audio.volume = 1.0; // pastikan volumenya cukup
+
+document.getElementById("surpriseBtn").addEventListener("click", function () {
   document.getElementById("surprise").classList.remove("hidden");
   playMusic();
 });
 
-// Balon animasi sederhana
+// Fungsi untuk memutar musik sekali
+function playMusic() {
+  if (!musicPlayed) {
+    audio.play().catch((err) => {
+      console.log("Autoplay gagal: ", err);
+    });
+    musicPlayed = true;
+  }
+}
+
+// Animasi balon
 function createBalloon() {
   const balloon = document.createElement('div');
   balloon.className = 'balloon';
@@ -15,9 +29,3 @@ function createBalloon() {
 }
 
 setInterval(createBalloon, 500);
-
-// Optional musik
-function playMusic() {
-  let audio = new Audio('lagu-romantis.mp3');
-  audio.play();
-}
