@@ -1,22 +1,34 @@
+// Hanya untuk tombol kejutan
 document.getElementById("surpriseBtn").addEventListener("click", function() {
-      document.getElementById("surprise").classList.remove("hidden");
-        playMusic();
-        });
+  document.getElementById("surprise").classList.remove("hidden");
+});
 
-        function createBalloon() {
-          const balloon = document.createElement('div');
-            balloon.className = 'balloon';
-              balloon.style.left = Math.random() * 100 + 'vw';
-                balloon.style.animationDuration = 4 + Math.random() * 3 + 's';
-                  document.querySelector('.balloons').appendChild(balloon);
+// --- Musik otomatis saat klik layar ---
+let musicPlayed = false;
 
-                    setTimeout(() => balloon.remove(), 8000);
-                    }
+function playMusicOnce() {
+  if (!musicPlayed) {
+    const audio = new Audio('lagu-romantis.mp3');
+    audio.play().catch(e => {
+      console.log("Autoplay gagal:", e);
+    });
+    musicPlayed = true;
+  }
+}
 
-                    setInterval(createBalloon, 500);
+// Jalankan musik saat user pertama kali menyentuh atau klik layar
+document.body.addEventListener("click", playMusicOnce);
+document.body.addEventListener("touchstart", playMusicOnce);
 
-                    // Optional music play (replace with your file name)
-                    function playMusic() {
-                      let audio = new Audio('lagu-romantis.mp3');
-                        audio.play();
-                        }
+// --- Balon animasi ---
+function createBalloon() {
+  const balloon = document.createElement('div');
+  balloon.className = 'balloon';
+  balloon.style.left = Math.random() * 100 + 'vw';
+  balloon.style.animationDuration = 4 + Math.random() * 3 + 's';
+  document.querySelector('.balloons').appendChild(balloon);
+
+  setTimeout(() => balloon.remove(), 8000);
+}
+
+setInterval(createBalloon, 500);
