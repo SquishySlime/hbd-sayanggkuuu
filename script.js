@@ -1,26 +1,27 @@
-// Hanya untuk tombol kejutan
-document.getElementById("surpriseBtn").addEventListener("click", function() {
-  document.getElementById("surprise").classList.remove("hidden");
-});
-
-// --- Musik otomatis saat klik layar ---
+// --- Musik: hanya diputar sekali saat interaksi pertama ---
 let musicPlayed = false;
+let birthdayMusic = new Audio('lagu-romantis.mp3');
 
 function playMusicOnce() {
   if (!musicPlayed) {
-    const audio = new Audio('lagu-romantis.mp3');
-    audio.play().catch(e => {
+    birthdayMusic.play().catch(e => {
       console.log("Autoplay gagal:", e);
     });
     musicPlayed = true;
   }
 }
 
-// Jalankan musik saat user pertama kali menyentuh atau klik layar
+// --- Main tombol kejutan ---
+document.getElementById("surpriseBtn").addEventListener("click", function() {
+  document.getElementById("surprise").classList.remove("hidden");
+  playMusicOnce(); // tetap coba putar saat tombol ditekan
+});
+
+// Jalankan musik juga saat layar disentuh/klik di mana saja
 document.body.addEventListener("click", playMusicOnce);
 document.body.addEventListener("touchstart", playMusicOnce);
 
-// --- Balon animasi ---
+// --- Animasi balon ---
 function createBalloon() {
   const balloon = document.createElement('div');
   balloon.className = 'balloon';
