@@ -1,0 +1,104 @@
+* {
+      margin: 0;
+        padding: 0;
+          box-sizing: border-box;
+          }
+
+          body {
+            background: linear-gradient(to bottom, #ffe0f0, #fff0f5);
+              font-family: 'Poppins', sans-serif;
+                color: #d63384;
+                  display: flex;
+                    justify-content: center;
+                      align-items: center;
+                        padding: 20px;
+                          min-height: 100vh;
+                          }
+
+                          .wrapper {
+                            background: white;
+                              padding: 20px;
+                                border-radius: 16px;
+                                  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+                                    width: 100%;
+                                      max-width: 420px;
+                                        text-align: center;
+                                          position: relative;
+                                            overflow: hidden;
+                                            }
+
+                                            header h1 {
+                                              font-size: 24px;
+                                                margin-bottom: 8px;
+                                                  color: #ff69b4;
+                                                  }
+
+                                                  .subtitle {
+                                                    font-size: 14px;
+                                                      color: #c2185b;
+                                                        margin-bottom: 20px;
+                                                        }
+
+                                                        .profile, .memory {
+                                                          width: 80%;
+                                                            border-radius: 12px;
+                                                              margin: 20px 0;
+                                                                box-shadow: 0 4px 10px rgba(255, 192, 203, 0.6);
+                                                                }
+
+                                                                .love-message {
+                                                                  font-size: 16px;
+                                                                    margin-bottom: 20px;
+                                                                    }
+
+                                                                    button {
+                                                                      background-color: #ff69b4;
+                                                                        color: white;
+                                                                          padding: 12px 24px;
+                                                                            border: none;
+                                                                              border-radius: 30px;
+                                                                                font-size: 16px;
+                                                                                  cursor: pointer;
+                                                                                    transition: background 0.3s;
+                                                                                    }
+
+                                                                                    button:hover {
+                                                                                      background-color: #e91e63;
+                                                                                      }
+
+                                                                                      .hidden {
+                                                                                        display: none;
+                                                                                        }
+
+                                                                                        .surprise-card {
+                                                                                          background: #ffe4ec;
+                                                                                            padding: 15px;
+                                                                                              border-radius: 12px;
+                                                                                                margin-top: 25px;
+                                                                                                  font-size: 15px;
+                                                                                                  }
+
+                                                                                                  .balloons {
+                                                                                                    position: fixed;
+                                                                                                      pointer-events: none;
+                                                                                                        width: 100%;
+                                                                                                          height: 100%;
+                                                                                                            top: 0;
+                                                                                                              left: 0;
+                                                                                                              }
+
+                                                                                                              .balloon {
+                                                                                                                width: 25px;
+                                                                                                                  height: 35px;
+                                                                                                                    background: #ffb6c1;
+                                                                                                                      border-radius: 50% 50% 50% 50%;
+                                                                                                                        position: absolute;
+                                                                                                                          bottom: -50px;
+                                                                                                                            animation: floatUp linear infinite;
+                                                                                                                              opacity: 0.7;
+                                                                                                                              }
+
+                                                                                                                              @keyframes floatUp {
+                                                                                                                                from { transform: translateY(0); }
+                                                                                                                                  to { transform: translateY(-120vh); }
+                                                                                                                                  }
