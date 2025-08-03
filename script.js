@@ -17,6 +17,12 @@ document.getElementById("surpriseBtn").addEventListener("click", function() {
   playMusicOnce(); // tetap coba putar saat tombol ditekan
 });
 
+document.getElementById("surpriseBtn").addEventListener("click", function () {
+  document.getElementById("surprise").classList.remove("hidden");
+  playMusicOnce();
+  confetti(); // panggil confetti saat tombol ditekan
+});
+
 // Jalankan musik juga saat layar disentuh/klik di mana saja
 document.body.addEventListener("click", playMusicOnce);
 document.body.addEventListener("touchstart", playMusicOnce);
